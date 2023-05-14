@@ -1,6 +1,6 @@
 import ArrayQueue from "./ArrayQueue";
 
-function hotPotato(names: string[], num: number) {
+export default function hotPotato(names: string[], num: number) {
   const queue = new ArrayQueue<string>();
   for (const name of names) {
     queue.enqueue(name);
@@ -8,7 +8,7 @@ function hotPotato(names: string[], num: number) {
 
   while (queue.size() > 1) {
     for (let i = 0; i < num; i++) {
-      if (num === i - 1) {
+      if (i === num - 1) {
         queue.dequeue();
       } else {
         const name = queue.dequeue();
@@ -19,6 +19,4 @@ function hotPotato(names: string[], num: number) {
 
   return queue.peek();
 }
-const names = ["Jahn", "Mike", "Mali", "Alex", "Steve"];
-const leftName = hotPotato(names, 3);
-console.log(leftName);
+
