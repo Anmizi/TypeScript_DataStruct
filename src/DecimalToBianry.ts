@@ -1,6 +1,6 @@
 import Stack from "./Stack";
 
-function DecimalToBianry(decimal: number): string {
+export function DecimalToBianry(decimal: number): string {
   const stack = new Stack<number>();
   while (decimal > 0) {
     const result = decimal % 2;
@@ -13,4 +13,3 @@ function DecimalToBianry(decimal: number): string {
   }
   return res;
 }
-console.log(DecimalToBianry(20));
